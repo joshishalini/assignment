@@ -1,0 +1,148 @@
+.container
+	.row.form-group
+		.col-xs-12
+			ul#myNav.nav.nav-pills.nav-justified.thumbnail.setup-panel
+				li#navStep1.li-nav.active step="#step-1" 
+					a
+						h4.list-group-item-heading Step 1
+						p.list-group-item-text User Detail
+				li#navStep2.li-nav.disabled step="#step-2" 
+					a
+						h4.list-group-item-heading Step 2
+						p.list-group-item-text Education Details
+				li#navStep3.li-nav.disabled step="#step-3" 
+					a
+						h4.list-group-item-heading Step 3
+						p.list-group-item-text Project Details
+				li#navStep4.li-nav.disabled step="#step-4" 
+					a
+						h4.list-group-item-heading Step 4
+						p.list-group-item-text Experiences Details
+= form_for @user, :html => { class: "demo-form", multipart: true}  do |f|
+	form.container
+		#step-1.row.setup-content
+			.col-xs-12
+				.col-md-12.well
+					.form-group
+						label Name
+						= f.text_field :name, autofocus: true, class: "form-control", placeholder:"Name" 
+					.form-group 
+						label Email
+						= f.text_field :email, autofocus: true, class: "form-control", placeholder:"Email" 
+					.form-group
+						label Phone No
+						= f.text_field :phone, autofocus: true, class: "form-control", placeholder:"Mobile No" 
+					.form-group
+						lable Father's Name
+						= f.text_field :father, autofocus: true, class: "form-control", placeholder:"Father's Name" 
+					.form-group
+						label Mother's Name
+						= f.text_field :mother, autofocus: true, class: "form-control", placeholder:"Mother's Name" 
+					.form-group
+						label Gender
+						= f.text_field :gender, autofocus: true, class: "form-control", placeholder:"Gender" 
+					.form-group
+						label Objective
+						= f.text_area :obj, autofocus: true, class: "form-control", placeholder:"Objective"
+					.form-group
+						label Hobbies
+						= f.text_field :hobbies, autofocus: true, class: "form-control", placeholder:"Hobbies"
+					.form-group
+						label Strenght
+						= f.text_field :strenght, autofocus: true, class: "form-control", placeholder:"Strenght"
+					.container.col-xs-12
+					input.btn.btn-md.btn-info onclick="step1Next()" value="Next" /
+					/! </form
+	form.container
+		#step-2.row.setup-content
+			.col-xs-12
+				.col-md-12.well
+					.form-group
+						= label_tag :per
+						= text_field_tag "user[educations_attributes][][per]","", class: "form-control"
+					.form-group	
+						= label_tag :year
+						= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" 
+					.form-group	
+						= label_tag :education
+						= text_field_tag "user[educations_attributes][][education]","", class: "form-control"
+					.form-group
+						= label_tag :percentage
+						= text_field_tag "user[educations_attributes][][per]","", class: "form-control"
+					.form-group	
+						= label_tag :year
+						= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" 
+					.form-group	
+						= label_tag :type
+						= text_field_tag "user[educations_attributes][][education]","", class: "form-control"
+					.form-group
+						= label_tag :percentage
+						= text_field_tag "user[educations_attributes][][per]","", class: "form-control"
+					.form-group	
+						= label_tag :year
+						= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" 
+					.form-group	
+						= label_tag :education
+						= text_field_tag "user[educations_attributes][][education]","", class: "form-control"
+					input.btn.btn-md.btn-info onclick="prevStep()" value="Prev" /
+					input.btn.btn-md.btn-info onclick="step2Next()" value="Next" /
+	form.container
+		#step-3.row.setup-content
+			.col-xs-12
+				.col-md-12.well
+					.form-group
+						= label_tag :title
+						= text_field_tag "user[projects_attributes][][title]","", class: "form-control"
+					.form-group	
+						= label_tag :des
+						= text_field_tag "user[projects_attributes][][des]","", class: "form-control"
+					.form-group	
+						= label_tag :title
+						= text_field_tag "user[projects_attributes][][title]","", class: "form-control"
+					.form-group
+						= label_tag :des
+						= text_field_tag "user[projects_attributes][][des]","", class: "form-control"	
+					input.btn.btn-md.btn-info onclick="prevStep()" value="Prev" /
+					input.btn.btn-md.btn-info onclick="step3Next()" value="Next" /
+	form.container
+		#step-4.row.setup-content
+			.col-xs-12
+				.col-md-12.well
+					.form-group
+						lable Company Name
+						= text_field_tag "user[experiences_attributes][][comp_name]","", class: "form-control"
+					.form-group	
+						= label_tag :designation
+						= text_field_tag "user[experiences_attributes][][designation]","", class: "form-control"
+					.form-group	
+						= label_tag :from
+						= text_field_tag "user[experiences_attributes][][from]","", class: "form-control"
+					.form-group
+						= label_tag :to
+						= text_field_tag "user[experiences_attributes][][to]","", class: "form-control"
+					.form-group
+						lable Company Name
+						= text_field_tag "user[experiences_attributes][][comp_name]","", class: "form-control"
+					.form-group	
+						= label_tag :designation
+						= text_field_tag "user[experiences_attributes][][designation]","", class: "form-control"
+					.form-group	
+						= label_tag :from
+						= text_field_tag "user[experiences_attributes][][from]","", class: "form-control"
+					.form-group
+						= label_tag :to
+						= text_field_tag "user[experiences_attributes][][to]","", class: "form-control"
+					.form-group
+						lable Company Name
+						= text_field_tag "user[experiences_attributes][][comp_name]","", class: "form-control"
+					.form-group	
+						= label_tag :designation
+						= text_field_tag "user[experiences_attributes][][designation]","", class: "form-control"
+					.form-group	
+						= label_tag :from
+						= text_field_tag "user[experiences_attributes][][from]","", class: "form-control"
+					.form-group
+						= label_tag :to
+						= text_field_tag "user[experiences_attributes][][to]","", class: "form-control"
+					input.btn.btn-md.btn-info onclick="prevStep()" value="Prev" /
+			= f.submit

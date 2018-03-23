@@ -1,0 +1,6 @@
+  /*
+  you can also use the href in the a element, and this code is no nesseray
+  */
+  #myNav li:not([disabled]){
+            cursor:pointer;
+        }
